@@ -40,7 +40,10 @@ object DatabaseBindings {
 
                 override fun createConnection(name: String): SQLiteConnection {
                     return driver.open(name).apply {
-                        execSQL("PRAGMA busy_timeout = 3000")
+                        // Increase the timeout from 3s to 10s to absorb write spikes.
+                        execSQL("PRAGMA busy_timeout = 10000")
+                        // Optimize I/O in WAL mode by reducing fsync contention.
+                        execSQL("PRAGMA synchronous = NORMAL")
                     }
                 }
             },
