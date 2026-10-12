@@ -28,6 +28,29 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
   - Show pages progressively while they download ([@wwww-wwww](https://github.com/wwww-wwww)) ([#4023](https://github.com/mihonapp/mihon/pull/4023))
   - Lower memory use for animated images and support cropping borders in long strip ([@wwww-wwww](https://github.com/wwww-wwww)) ([#4029](https://github.com/mihonapp/mihon/pull/4029))
   - Pair more wide pages in dual page view by comparing them with neighbouring pages ([@wwww-wwww](https://github.com/wwww-wwww)) ([#4051](https://github.com/mihonapp/mihon/pull/4051))
+
+### Changed
+- Use a new decoder for images Android can't decode itself, like AVIF, JPEG XL and HEIF, and support JPEG 2000 images ([@wwww-wwww](https://github.com/wwww-wwww)) ([#3786](https://github.com/mihonapp/mihon/pull/3786))
+
+### Removed
+- Remove "Custom hardware bitmap threshold" and "Custom display profile" advanced settings ([@wwww-wwww](https://github.com/wwww-wwww)) ([#3786](https://github.com/mihonapp/mihon/pull/3786))
+
+## [v0.21.1] - 2026-10-12
+### Fixed
+- Fixed refreshing chapters failing with the app language set to Arabic or another language with its own digits ([@AntsyLich](https://github.com/AntsyLich)) ([`8457fb9`](https://github.com/mihonapp/mihon/commit/8457fb9))
+- Fixed a crash on launch on some Samsung devices running Android 9 to 11 ([@AntsyLich](https://github.com/AntsyLich)) ([`abb126a`](https://github.com/mihonapp/mihon/commit/abb126a))
+- Fixed the start and resume button going under the taskbar on tablets ([@AntsyLich](https://github.com/AntsyLich)) ([`c279291`](https://github.com/mihonapp/mihon/commit/c279291))
+- Fixed a crash when updating an extension while others were installing ([@AntsyLich](https://github.com/AntsyLich)) ([`07b9fb6`](https://github.com/mihonapp/mihon/commit/07b9fb6))
+- Fixed library entries without a date added getting their last update time as date added when updating from v0.20.x ([@AntsyLich](https://github.com/AntsyLich)) ([`6dffca1`](https://github.com/mihonapp/mihon/commit/6dffca1))
+- Fixed the app closing when WebView's page process crashed ([@AntsyLich](https://github.com/AntsyLich)) ([`649fc83`](https://github.com/mihonapp/mihon/commit/649fc83))
+- Fixed installing or updating an extension sometimes cancelling the install of another one ([@AntsyLich](https://github.com/AntsyLich)) ([`ae749bb`](https://github.com/mihonapp/mihon/commit/ae749bb))
+- Fixed updating from v0.20.x taking up to hours on libraries with many duplicate entries ([@AntsyLich](https://github.com/AntsyLich)) ([`a999e49`](https://github.com/mihonapp/mihon/commit/a999e49))
+- Fixed the app staying on the updating screen for good when updating its data failed, it now shows what went wrong, and updating failing on leftover data of deleted entries ([@AntsyLich](https://github.com/AntsyLich)) ([`9dbb714`](https://github.com/mihonapp/mihon/commit/9dbb714))
+- Fixed library updates ignoring the smart update restrictions for entries whose details were never fetched ([@AntsyLich](https://github.com/AntsyLich)) ([`010ac71`](https://github.com/mihonapp/mihon/commit/010ac71))
+- Fixed resuming a chapter sometimes opening the next chapter partway through, and saving progress to it, in the right to left reader ([@AntsyLich](https://github.com/AntsyLich)) ([`51b61a3`](https://github.com/mihonapp/mihon/commit/51b61a3))
+
+## [v0.21.0] - 2026-10-12
+### Added
 - Add `id:` prefix search to remaining trackers (AniList, Bangumi, Kitsu, MangaUpdates, Shikimori, and Hikka) ([@MajorTanya](https://github.com/MajorTanya), [@BrutuZ](https://github.com/BrutuZ)) ([#3776](https://github.com/mihonapp/mihon/pull/3776))
   - Allow `id:` to search for slugs on Kitsu ([@MajorTanya](https://github.com/MajorTanya)) ([#3792](https://github.com/mihonapp/mihon/pull/3792))
 - Add support for using the user's chosen rating system for Kitsu ([@MajorTanya](https://github.com/MajorTanya)) ([#3818](https://github.com/mihonapp/mihon/pull/3818))
@@ -45,7 +68,6 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 
 ### Changed
 - Download app updates from the update screen instead of a background job, and remove the "App updates" notification channel ([@AntsyLich](https://github.com/AntsyLich)) ([#3707](https://github.com/mihonapp/mihon/pull/3707))
-- Use a new decoder for images Android can't decode itself, like AVIF, JPEG XL and HEIF, and support JPEG 2000 images ([@wwww-wwww](https://github.com/wwww-wwww)) ([#3786](https://github.com/mihonapp/mihon/pull/3786))
 - Switch app icons to Material Symbols ([@AntsyLich](https://github.com/AntsyLich)) ([#3873](https://github.com/mihonapp/mihon/pull/3873))
   - Use the filled icon for the library continue reading button ([@AntsyLich](https://github.com/AntsyLich)) ([`34a33ed`](https://github.com/mihonapp/mihon/commit/34a33ed))
   - Move notification, launcher shortcut, bottom navigation and reading mode icons to Material Symbols, bring back filled icons where the switch dropped them, and show a compact grid icon for the compact display modes ([@AntsyLich](https://github.com/AntsyLich)) ([#4057](https://github.com/mihonapp/mihon/pull/4057))
@@ -102,7 +124,7 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 - Speed up queueing many chapters for download at once ([@AntsyLich](https://github.com/AntsyLich)) ([`f02bf5b`](https://github.com/mihonapp/mihon/commit/f02bf5b))
 
 ### Removed
-- Remove "Custom hardware bitmap threshold", "Use legacy decoder for long strip reader" and "Custom display profile" advanced settings ([@wwww-wwww](https://github.com/wwww-wwww)) ([#3786](https://github.com/mihonapp/mihon/pull/3786))
+- Remove "Use legacy decoder for long strip reader" advanced setting, since long strip pages no longer load as one big image ([@AntsyLich](https://github.com/AntsyLich))
 
 ### Fixed
 - Fixed app and extension update check running again on configuration change ([@AntsyLich](https://github.com/AntsyLich)) ([#3708](https://github.com/mihonapp/mihon/pull/3708))
@@ -773,7 +795,9 @@ Same as v0.19.6
 - Branding to Mihon ([@AntsyLich](https://github.com/AntsyLich))
 - Minimum supported Android version to 8 ([@AntsyLich](https://github.com/AntsyLich)) ([`dfb3091`](https://github.com/mihonapp/mihon/commit/dfb3091e380dda3e9bfb64bf5c9a685cf3a03d0e))
 
-[unreleased]: https://github.com/mihonapp/mihon/compare/v0.20.4...main
+[unreleased]: https://github.com/mihonapp/mihon/compare/v0.21.1...main
+[v0.21.1]: https://github.com/mihonapp/mihon/compare/v0.21.0...v0.21.1
+[v0.21.0]: https://github.com/mihonapp/mihon/compare/v0.20.4...v0.21.0
 [v0.20.4]: https://github.com/mihonapp/mihon/compare/v0.20.3...v0.20.4
 [v0.20.3]: https://github.com/mihonapp/mihon/compare/v0.20.2...v0.20.3
 [v0.20.2]: https://github.com/mihonapp/mihon/compare/v0.20.1...v0.20.2
