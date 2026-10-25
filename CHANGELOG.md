@@ -36,6 +36,7 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 
 ### Improved
 - Create and restore backups faster and with less memory ([@NGB-Was-Taken](https://github.com/NGB-Was-Taken), [@AntsyLich](https://github.com/AntsyLich)) ([`771ba33`](https://github.com/mihonapp/mihon/commit/771ba33))
+  - Read backups faster before restoring, and decode each entry only once while restoring ([@AntsyLich](https://github.com/AntsyLich))
 
 ### Removed
 - Remove "Custom hardware bitmap threshold" and "Custom display profile" advanced settings ([@wwww-wwww](https://github.com/wwww-wwww)) ([#3786](https://github.com/mihonapp/mihon/pull/3786))
@@ -47,6 +48,7 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 - Fixed downloads not showing for entries of a source sharing its name with another source ([@AntsyLich](https://github.com/AntsyLich)) ([`deeb9b2`](https://github.com/mihonapp/mihon/commit/deeb9b2))
 - Fixed covers reloading when removing an entry from the library ([@AntsyLich](https://github.com/AntsyLich))
 - Fixed the More tab icon pausing and then bouncing back when leaving the tab ([@AntsyLich](https://github.com/AntsyLich))
+- Fixed Shizuku extension installer being unavailable with Sui ([@AntsyLich](https://github.com/AntsyLich))
 
 ## [v0.21.2] - 2026-10-13
 ### Fixed
